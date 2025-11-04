@@ -6,6 +6,8 @@ import RegisterScreen from "./screens/registro/register";
 import Register2Screen from "./screens/registro/register2";
 import Register3Screen from "./screens/registro/register3";
 import ScreenConsulta from "./screens/consulta";
+import Mensajeria from "./screens/menu_desplegable/mensajeria";
+import ListaMensajes from "./screens/lista_mensajes/mensajes";
 
 const stack = createNativeStackNavigator();
 
@@ -39,6 +41,16 @@ export default function App() {
         <stack.Screen
           name="Consulta"
           component={ScreenConsulta}
+          options={{headerShown: false}}
+        />
+        <stack.Screen
+          name="Mensajeria"
+          component={Mensajeria}
+          options={{headerShown: false}}
+        />
+        <stack.Screen
+          name="ListaMensajes"
+          component={ListaMensajes}
           options={{headerShown: false}}
         />
       </stack.Navigator>

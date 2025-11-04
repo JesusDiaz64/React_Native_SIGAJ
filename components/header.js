@@ -2,7 +2,7 @@ import { Text, View, Image } from "react-native";
 
 import styles from "../styles/login_style";
 
-export default function Headers({titulo = ""}) {
+export default function Headers({ titulo = "" }) {
   return (
     <View>
       <View>

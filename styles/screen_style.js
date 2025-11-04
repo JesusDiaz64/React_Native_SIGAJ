@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container: {
     flex: 1,
-    backgroundColor: "#000000c7",
+    backgroundColor: "#757575c7",
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 10,
@@ -36,6 +36,7 @@ export default StyleSheet.create({
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
+    maxWidth: "80%",
   },
 
   logo: {

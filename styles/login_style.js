@@ -1,16 +1,15 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    container: {
+  container: {
     flex: 1,
-    backgroundColor: "#000000c7",
+    backgroundColor: "#757575c7",
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 10,
   },
 
   contenedor: {
-    //Revisar Aqui
     backgroundColor: "#fff",
     borderRadius: 20,
     borderColor: "#27646B",

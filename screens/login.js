@@ -25,9 +25,8 @@ export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.contenedor}>
-        <View>
-          <Text style={styles.header}>Consulta, Nombre y Apellido</Text>
-        </View>
+
+        <Headers titulo="Inicio de Sesión"/>
 
         <Input
           value={username}

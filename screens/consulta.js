@@ -1,42 +1,64 @@
 import React, { useState } from "react";
 
-import { Text, View, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
-import Headers from "../components/header";
+import Styles from "../styles/consulta.style";
 
-import styles from "../styles/login_style";
+import Header from "../components/Header_Users";
 
-import Input from "../components/inputs";
+import Input from "../components/input_busqueda";
 
-export default function LoginScreen({ navigation }) {
+import Options from "../components/options";
+
+import TablaArchivos from "../components/tabla_archivos";
+
+export default function Consulta() {
+  const opcionesTiempo = [
+    "Más recientes",
+    "Más antiguos",
+    "Últimas 24 horas",
+    "Última semana",
+    "Último mes",
+  ];
+
+  const archivos = [
+    { id: "001", nombre: "Reporte_juicio", usuario: "Juan Perez" },
+    { id: "002", nombre: "Fecha_Juicio", usuario: "Pedro Rodriguez" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+    { id: "003", nombre: "Citatorio", usuario: "Roberto Diaz" },
+  ];
+
+  const orden = ["Orden alfabeto (a-z)", "Orden alfabeto (z-a)"];
+
   return (
-    <View style={styles.container}>
-      <View style={styles.contenedor}>
-        <Headers titulo="Inicio de Sesión" />
-
-        <Input title="Nombre de Usuario" />
-
-        <Input title="Contraseña" />
-        <View style={styles.contenedor_contrasena}>
-          <Text style={styles.texto_olvido}>¿Olvidaste tu contraseña?</Text>
-        </View>
-
-        <TouchableOpacity style={styles.boton_ingresar}>
-          <Text style={styles.texto_boton}>Ingresar</Text>
-        </TouchableOpacity>
-
-        <View style={styles.nuevo_usuario}>
-          <Text>¿Usuario Nuevo?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Register")}>
-            <Text style={styles.boton_registrarse}> Registrate aqui!</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <Text onPress={() => navigation.navigate("Consulta")}>
-            Pulsa Aqui para consulta
-          </Text>
-        </View>
+    <View style={Styles.container}>
+      <Header nombre="Jesus David" apellidoP="Diaz Cabrales" aviso="Consulta"/> 
+      {/*BORRAR LINEA 45 DE EJEMPLO */}
+      <View style={Styles.container_busqueda}>
+        <Input title="Buscar por ID, nombre o fecha" />
       </View>
+      <View style={Styles.container_options}>
+        <Options options={orden} />
+      </View>
+      <View style={Styles.container_options}>
+        <Options options={opcionesTiempo} />
+      </View>
+      <View style={Styles.container_button_principal}>
+        <TouchableOpacity style={Styles.container_button}>
+          <Text style={Styles.button}>Consultar</Text>
+        </TouchableOpacity>
+      </View>
+      <TablaArchivos data={archivos} />
     </View>
   );
 }

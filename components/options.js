@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import styles from "../styles/login_style";
+import Styles from "../styles/consulta.style";
 
-export default function Input({ options = [] }) {
+export default function Input({ options = [], title="Seleccione una opción" }) {
   const [selectedValue, setSelectedValue] = useState(options[0] || "");
 
   return (
-    <View style={styles.contenedor_inputs}>
+    <View style={Styles.container_option}>
       <Picker
-        style={[styles.input]}
-        style={{fontSize:18}}
-
+        style={Styles.picker}
         selectedValue={selectedValue}
         onValueChange={(itemValue) => setSelectedValue(itemValue)}
+        dropdownIconColor={"#27646B"}
       >
+        <Picker.Item
+        label={title} value="" enabled={false} />
+
         {options.map((option, index) => (
-          <Picker.Item key={index} label={option} value={option} />
+            <Picker.Item key={index} label={option} value={option} />
         ))}
       </Picker>
     </View>
   );
 }
-
